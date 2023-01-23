@@ -1,0 +1,141 @@
+﻿  Agent.cpp
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,6): error C2365: 'BaseGameEntity::ID': redefinition; previous definition was 'data member'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(9,6): message : see declaration of 'BaseGameEntity::ID'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,19): error C2059: syntax error: 'return'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2059: syntax error: '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(10,21): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(11,23): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(12,20): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\AgentStates.h(14,21): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\AgentStates.h(15,23): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\AgentStates.h(16,20): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,14): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(15,15): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(11,38): error C2665: 'StateMachine::StateMachine': no overloaded function could convert all the argument types
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(28,1): message : could be 'StateMachine::StateMachine(StateMachine &&)'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(11,38): message : 'StateMachine::StateMachine(StateMachine &&)': cannot convert argument 1 from 'Agent *' to 'StateMachine &&'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(11,39): message : Reason: cannot convert from 'Agent *' to 'StateMachine'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(11,39): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(28,1): message : or       'StateMachine::StateMachine(const StateMachine &)'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(11,38): message : 'StateMachine::StateMachine(const StateMachine &)': cannot convert argument 1 from 'Agent *' to 'const StateMachine &'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(11,39): message : Reason: cannot convert from 'Agent *' to 'const StateMachine'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(11,39): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(11,38): message : while trying to match the argument list '(Agent *)'
+  Agent.h
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,6): error C2365: 'BaseGameEntity::ID': redefinition; previous definition was 'data member'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(9,6): message : see declaration of 'BaseGameEntity::ID'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,19): error C2059: syntax error: 'return'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2059: syntax error: '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,14): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(11,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(11,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(11,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(12,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(12,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(12,22): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(15,15): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(17,19): error C2061: syntax error: identifier 'State'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(21,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(21,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(21,30): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(22,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(22,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(22,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(24,18): error C2061: syntax error: identifier 'State'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(25,19): error C2061: syntax error: identifier 'State'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(24,30): error C2065: 'currentState': undeclared identifier
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(24,45): error C2065: 's': undeclared identifier
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(25,31): error C2065: 'previousState': undeclared identifier
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(25,47): error C2065: 's': undeclared identifier
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.h(11,14): error C2011: 'Location': 'enum' type redefinition
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.h(11,6): message : see declaration of 'Location'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.h(20,13): error C2011: 'Agent': 'class' type redefinition
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.h(20,7): message : see declaration of 'Agent'
+  AgentStates.cpp
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,6): error C2365: 'BaseGameEntity::ID': redefinition; previous definition was 'data member'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(9,6): message : see declaration of 'BaseGameEntity::ID'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,19): error C2059: syntax error: 'return'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2059: syntax error: '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,14): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(11,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(11,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(11,21): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(12,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(12,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(12,22): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(15,15): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(17,19): error C2061: syntax error: identifier 'State'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(21,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(21,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(21,30): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(22,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(22,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(22,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(24,18): error C2061: syntax error: identifier 'State'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(25,19): error C2061: syntax error: identifier 'State'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(24,30): error C2065: 'currentState': undeclared identifier
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(24,45): error C2065: 's': undeclared identifier
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(25,31): error C2065: 'previousState': undeclared identifier
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(25,47): error C2065: 's': undeclared identifier
+  BaseGameEntity.h
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,6): error C2365: 'BaseGameEntity::ID': redefinition; previous definition was 'data member'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(9,6): message : see declaration of 'BaseGameEntity::ID'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,19): error C2059: syntax error: 'return'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2059: syntax error: '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2143: syntax error: missing ';' before '}'
+  Main.cpp
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,6): error C2365: 'BaseGameEntity::ID': redefinition; previous definition was 'data member'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(9,6): message : see declaration of 'BaseGameEntity::ID'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,19): error C2059: syntax error: 'return'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2059: syntax error: '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(10,21): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(11,23): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(12,20): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\AgentStates.h(14,21): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\AgentStates.h(15,23): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\AgentStates.h(16,20): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,7): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(10,14): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.h(15,15): error C2061: syntax error: identifier 'Agent'
+  StateMachine.cpp
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,6): error C2365: 'BaseGameEntity::ID': redefinition; previous definition was 'data member'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(9,6): message : see declaration of 'BaseGameEntity::ID'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,19): error C2059: syntax error: 'return'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(19,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2059: syntax error: '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\BaseGameEntity.h(20,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(10,21): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(11,23): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(12,20): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\AgentStates.h(14,21): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\AgentStates.h(15,23): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\AgentStates.h(16,20): error C2061: syntax error: identifier 'Agent'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.h(22,14): error C2143: syntax error: missing ';' before '*'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.h(22,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.h(22,33): error C2238: unexpected token(s) preceding ';'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.cpp(12,32): error C2660: 'State::Execute': function does not take 1 arguments
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(11,15): message : see declaration of 'State::Execute'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.cpp(12,32): message : while trying to match the argument list '(Agent *)'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.cpp(19,15): error C2660: 'State::Exit': function does not take 1 arguments
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(12,15): message : see declaration of 'State::Exit'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.cpp(19,15): message : while trying to match the argument list '(Agent *)'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.cpp(21,14): error C2660: 'State::Enter': function does not take 1 arguments
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\State.h(10,15): message : see declaration of 'State::Enter'
+C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\StateMachine.cpp(21,14): message : while trying to match the argument list '(Agent *)'
+  Generating Code...
