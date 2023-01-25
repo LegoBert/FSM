@@ -2,27 +2,23 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include <cassert>
 #include "BaseGameEntity.h"
-#include "AgentStates.h"
 #include "StateMachine.h"
 using namespace std;
 
 enum Location{
 	Home,
 	Work,
-	store,
 	Bar,
-	resturant,
-	amusement_park
+	Resturant,
 };
+
+class StateMachine;
 
 class Agent : public BaseGameEntity {
 private:
 	StateMachine* agentStateMachine;
-
 	Location currentLocation;
-	Location previousLocation;
 
 	int currency;
 	int energy;
@@ -39,9 +35,6 @@ public:
 	// Getters and setters
 	Location GetLocation() { return currentLocation; }
 	void ChangeLocation(Location newLocation) { currentLocation = newLocation; }
-
-	Location GetPreviousLocation() { return previousLocation; }
-	void ChangePreviousLocation(Location newLocation) { previousLocation = newLocation; }
 
 	int GetCurrency() { return currency; }
 	void ChangeCurrency(int val) { currency += val; }

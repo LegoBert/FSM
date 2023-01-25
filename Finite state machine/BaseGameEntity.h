@@ -6,15 +6,15 @@ using namespace std;
 
 class BaseGameEntity {
 private:
-	int ID;
+	int m_ID;
 	static int nextValidID;
 	void setID() {
-		ID = nextValidID;
+		m_ID = nextValidID;
 		nextValidID++;
 	}
 public:
 	BaseGameEntity() { setID(); };
 	~BaseGameEntity() = default;
 	virtual void Update() = 0;
-	int ID() const { return ID; }
+	int ID() { return m_ID; }
 };

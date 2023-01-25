@@ -2,7 +2,8 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include "Agent.h"
+#include <cassert>
+#include "State.h"
 using namespace std;
 
 class StateMachine {

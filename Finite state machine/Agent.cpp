@@ -18,7 +18,7 @@ Agent::~Agent() {
 }
 
 void Agent::Update() {
-	energy += rand() % (10);
+	energy -= rand() % (10);
 	thirst += rand() % (10);
 	hunger += rand() % (10);
 	happines -= rand() % (10);

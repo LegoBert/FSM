@@ -131,11 +131,13 @@
     <ClCompile Include="Agent.h" />
     <ClCompile Include="AgentStates.cpp" />
     <ClCompile Include="BaseGameEntity.h" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgentStates.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
   </ItemGroup>

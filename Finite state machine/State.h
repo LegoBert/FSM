@@ -2,8 +2,9 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include "Agent.h"
 using namespace std;
+
+class Agent;
 
 class State {
 public:
