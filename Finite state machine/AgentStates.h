@@ -2,7 +2,7 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include "Agent.h"
+#include "State.h"
 using namespace std;
 
 class GoToSleep : public State {

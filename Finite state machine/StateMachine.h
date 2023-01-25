@@ -4,7 +4,13 @@
 #include <iostream>
 #include <cassert>
 #include "State.h"
+#include "Agent.h"
+#include "Telegram.h"
 using namespace std;
+
+class State;
+class Agent;
+enum Location;
 
 class StateMachine {
 private:
@@ -17,6 +23,7 @@ public:
 	void Update();
 	void ChangeState(State* newState);
 	void RevertState();
+	bool HandleMessage(const Telegram& msg) const;
 
 	// Getters and setters
 	State* CurrentState() const { return currentState; }

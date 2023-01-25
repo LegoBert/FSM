@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <cassert>
-#include <string> 
+#include <string>
 #include "BaseGameEntity.h"
 using namespace std;
 

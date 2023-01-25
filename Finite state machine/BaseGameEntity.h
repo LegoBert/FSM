@@ -2,6 +2,7 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
+#include "Telegram.h"
 using namespace std;
 
 class BaseGameEntity {
@@ -13,8 +14,11 @@ private:
 		nextValidID++;
 	}
 public:
-	BaseGameEntity() { setID(); };
+	BaseGameEntity() { 
+		setID();
+	}
 	~BaseGameEntity() = default;
 	virtual void Update() = 0;
 	int ID() { return m_ID; }
+	virtual bool HandleMessage(const Telegram& msg) = 0;
 };

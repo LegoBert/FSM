@@ -24,3 +24,12 @@ void StateMachine::ChangeState(State* newState) {
 void StateMachine::RevertState() {
 	ChangeState(previousState);
 }
+
+bool StateMachine::HandleMessage(const Telegram& msg) const
+{
+	if (currentState && currentState->OnMessage(owner, msg))
+	{
+		return true;
+	}
+	return false;
+}

@@ -1,6 +1,7 @@
 #include "Agent.h"
 
-Agent::Agent() {
+Agent::Agent(string n) {
+	name = n;
 	currentLocation = Location::Home;
 	currency = rand() % (100 - 50 + 1) + 50;
 	energy = rand() % (25 + 1);
@@ -25,11 +26,7 @@ void Agent::Update() {
 	agentStateMachine->Update();
 };
 
-/*
-void Agent::ChangeState(State* newState) {
-	assert(currentState && newState);
-	currentState->Exit(this);
-	currentState = newState;
-	currentState->Enter(this);
-};
-*/
+bool Agent::HandleMessage(const Telegram& msg)
+{
+	return agentStateMachine->HandleMessage(msg);
+}

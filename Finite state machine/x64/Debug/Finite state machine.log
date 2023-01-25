@@ -1,6 +1,21 @@
 ﻿  Agent.cpp
-C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(12,32): error C2653: 'GoToSleep': is not a class or namespace name
-C:\Users\Kit Sundström\Documents\GitHub\FSM\Finite state machine\Agent.cpp(12,43): error C3861: 'Instance': identifier not found
+D:\GitHub\FSM\Finite state machine\Agent.cpp(13,32): error C2653: 'GoToSleep': is not a class or namespace name
+D:\GitHub\FSM\Finite state machine\Agent.cpp(13,43): error C3861: 'Instance': identifier not found
   Agent.h
-  AgentStates.cpp
+D:\GitHub\FSM\Finite state machine\Agent.h(18,14): error C2143: syntax error: missing ';' before '*'
+D:\GitHub\FSM\Finite state machine\Agent.h(18,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\GitHub\FSM\Finite state machine\Agent.h(18,33): error C2238: unexpected token(s) preceding ';'
+D:\GitHub\FSM\Finite state machine\Agent.h(9,14): error C2011: 'Location': 'enum' type redefinition
+D:\GitHub\FSM\Finite state machine\StateMachine.h(13): message : see declaration of 'Location'
+D:\GitHub\FSM\Finite state machine\Agent.h(16,13): error C2011: 'Agent': 'class' type redefinition
+D:\GitHub\FSM\Finite state machine\StateMachine.h(12): message : see declaration of 'Agent'
+  BaseGameEntity.h
+  MessageDispatcher.cpp
+D:\GitHub\FSM\Finite state machine\MessageDispatcher.cpp(15,55): error C2440: 'initializing': cannot convert from 'std::chrono::steady_clock::time_point' to 'float'
+D:\GitHub\FSM\Finite state machine\MessageDispatcher.cpp(15,21): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\GitHub\FSM\Finite state machine\MessageDispatcher.cpp(22,22): error C2065: 'Clock': undeclared identifier
+  StateMachine.cpp
+D:\GitHub\FSM\Finite state machine\Agent.h(18,14): error C2143: syntax error: missing ';' before '*'
+D:\GitHub\FSM\Finite state machine\Agent.h(18,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\GitHub\FSM\Finite state machine\Agent.h(18,33): error C2238: unexpected token(s) preceding ';'
   Generating Code...

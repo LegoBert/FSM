@@ -13,12 +13,12 @@ enum Location{
 	Resturant,
 };
 
-class StateMachine;
-
 class Agent : public BaseGameEntity {
 private:
 	StateMachine* agentStateMachine;
 	Location currentLocation;
+
+	string name;
 
 	int currency;
 	int energy;
@@ -27,10 +27,10 @@ private:
 	int happines;
 
 public:
-	Agent();
+	Agent(string n);
 	~Agent();
 	void Update();
-	//void ChangeState(State* newState);
+	bool HandleMessage(const Telegram& msg);
 
 	// Getters and setters
 	Location GetLocation() { return currentLocation; }
@@ -50,4 +50,6 @@ public:
 
 	int GetHappines() { return happines; }
 	void ChangeHappines(int val) { happines += val; }
+
+	string GetNameOfEntity() { return name; }
 };
