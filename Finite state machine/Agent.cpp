@@ -10,7 +10,7 @@ Agent::Agent(string n) {
 	happines = rand() % (100 - 50 + 1) + 50;
 
 	agentStateMachine = new StateMachine(this);
-	agentStateMachine->SetCurrent(GoToSleep::Instance());
+	//agentStateMachine->SetCurrent(GoToSleep::Instance());
 	//agentStateMachine->SetGlobal();
 };
 

@@ -6,12 +6,7 @@
 #include "StateMachine.h"
 using namespace std;
 
-enum Location{
-	Home,
-	Work,
-	Bar,
-	Resturant,
-};
+class StateMachine;
 
 class Agent : public BaseGameEntity {
 private:

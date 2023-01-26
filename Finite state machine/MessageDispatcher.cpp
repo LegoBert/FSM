@@ -12,15 +12,15 @@ void MessageDispatcher::DispatchMessage(float delay, int sender, int receiver, i
 		Discharge(pReceiver, telegram);
 	}
 	else {
-		float currentTime = std::chrono::steady_clock::now();
+		float currentTime = 0;// std::chrono::steady_clock::now();
 		telegram.dispatchTime = currentTime + delay;
 		priorityQ.push_back(telegram);
 	}
 }
 
 void MessageDispatcher::DispatchDelayedMessages() {
-	float CurrentTime = Clock->GetCurrentTime();
-	while ((priorityQ.begin()->dispatchTime < CurrentTime) && (priorityQ.begin()->dispatchTime > 0))
+	float currentTime = 0;//Clock->GetCurrentTime();
+	while ((priorityQ.begin()->dispatchTime < currentTime) && (priorityQ.begin()->dispatchTime > 0))
 	{
 		Telegram telegram = *priorityQ.begin();
 		BaseGameEntity* pReceiver = entityMgr->GetEntityFromID(telegram.receiver);

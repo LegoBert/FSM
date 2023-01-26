@@ -3,10 +3,11 @@
 #include <vector>
 #include <iostream>
 #include "Agent.h"
+#include "StateMachine.h"
 #include "Telegram.h"
 using namespace std;
 
-class Agent;
+class StateMachine;
 
 class State {
 public:

@@ -8,14 +8,14 @@ using namespace std;
 class BaseGameEntity {
 private:
 	int m_ID;
-	static int nextValidID;
-	void setID() {
-		m_ID = nextValidID;
+	void setID(int id) {
+		m_ID = id;
 		nextValidID++;
 	}
 public:
-	BaseGameEntity() { 
-		setID();
+	BaseGameEntity() = default;
+	BaseGameEntity(int id) {
+		setID(id);
 	}
 	~BaseGameEntity() = default;
 	virtual void Update() = 0;

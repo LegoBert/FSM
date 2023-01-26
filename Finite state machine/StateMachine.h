@@ -10,7 +10,6 @@ using namespace std;
 
 class State;
 class Agent;
-enum Location;
 
 class StateMachine {
 private:
