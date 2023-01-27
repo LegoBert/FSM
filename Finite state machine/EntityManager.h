@@ -9,9 +9,9 @@ using namespace std;
 
 class EntityManager {
 private:
-	vector<BaseGameEntity*> m_EntityMap;
 	static EntityManager instance;
 	EntityManager() = default;
+	vector<BaseGameEntity*> m_EntityMap;
 public:
 	static EntityManager* Instance() { return &instance; }
 	void RegisterEntity(BaseGameEntity* newEntity);

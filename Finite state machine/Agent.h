@@ -1,9 +1,12 @@
 #pragma once
+#ifndef Agent_H
+#define Agent_H
 #include <cmath>
 #include <vector>
 #include <iostream>
 #include "BaseGameEntity.h"
 #include "StateMachine.h"
+#include "AgentStates.h" // problem?
 using namespace std;
 
 class StateMachine;
@@ -13,8 +16,14 @@ private:
 	StateMachine* agentStateMachine;
 	Location currentLocation;
 
-	string name;
+	// Health
+	int hp = 100;
+	int max_hp = 100;
+	int hp_loss = 10;
+	int hp_regen = 5;
+	bool alive = true;
 
+	// Stats
 	int currency;
 	int energy;
 	int thirst;
@@ -22,12 +31,13 @@ private:
 	int happines;
 
 public:
-	Agent(string n);
+	Agent(string n , int id);
 	~Agent();
 	void Update();
 	bool HandleMessage(const Telegram& msg);
+	StateMachine* GetFSM()const { return agentStateMachine; }
 
-	// Getters and setters
+	// Getters and setters for stats
 	Location GetLocation() { return currentLocation; }
 	void ChangeLocation(Location newLocation) { currentLocation = newLocation; }
 
@@ -46,5 +56,20 @@ public:
 	int GetHappines() { return happines; }
 	void ChangeHappines(int val) { happines += val; }
 
-	string GetNameOfEntity() { return name; }
+	// Health Functions
+	int GetHP() { return hp; }
+	void RegenHP() { 
+		if (hp < max_hp)
+			hp += hp_regen;
+		if (hp > max_hp)
+			hp = max_hp;
+	}
+	void LossHP() {
+		hp -= hp_loss;
+		if (hp <= 0)
+			alive = false;
+	}
+	bool GetAlive() { return alive; }
 };
+
+#endif

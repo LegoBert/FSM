@@ -8,6 +8,7 @@
 using namespace std;
 
 class StateMachine;
+class Agent;
 
 class State {
 public:
