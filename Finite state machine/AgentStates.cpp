@@ -15,13 +15,15 @@ void GoToSleep::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": ZZZ..."
 		<< endl;
-	pAgent->ChangeEnergy(rand() % (100 - 70 + 1) + 70);
-	// Eat if hungry after waking up
-	if (pAgent->GetHunger() > 20)
+	pAgent->SetEnergy(100);
+	// Eat
+	if (pAgent->IsHungry())
 		pAgent->GetFSM()->ChangeState(&SatisfyHunger::Instance());
-	// Drink if thirsty after waking up
-	if (pAgent->GetThirst() > 20)
+	// Drink
+	if (pAgent->IsThirsty())
 		pAgent->GetFSM()->ChangeState(&QuenchThirst::Instance());
+	// Work 
+		pAgent->GetFSM()->ChangeState(&GoToWork::Instance());
 }
 	
 void GoToSleep::Exit(Agent* pAgent) {
@@ -44,14 +46,23 @@ void GoToWork::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": Working"
 		<< endl;
-	pAgent->ChangeEnergy(-(rand() % (50 - 10 + 1) + 10));
+	pAgent->AddEnergy(-5);
+	pAgent->AddCurrency(rand() % (50 - 10 + 1) + 10);
+	// Eat
+	if (pAgent->IsHungry())
+		pAgent->GetFSM()->ChangeState(&SatisfyHunger::Instance());
+	// Drink
+	if (pAgent->IsThirsty())
+		pAgent->GetFSM()->ChangeState(&QuenchThirst::Instance());
+	// Sleep
+	if (pAgent->IsFatigue())
+		pAgent->GetFSM()->ChangeState(&GoToSleep::Instance());
 }
 
 void GoToWork::Exit(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": Done Working"
 		<< endl;
-	pAgent->ChangeCurrency(rand() % (50 - 10 + 1) + 10);
 }
 
 // QuenchThirst
@@ -65,7 +76,9 @@ void QuenchThirst::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": Drinking"
 		<< endl;
-	pAgent->ChangeThirst(rand() % (50 - 25 + 1) + 25);
+	pAgent->AddThirst(-80);
+	// Revert to previous state
+	pAgent->GetFSM()->RevertState();
 }
 
 void QuenchThirst::Exit(Agent* pAgent) {
@@ -91,12 +104,21 @@ void SatisfyHunger::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": Eating"
 		<< endl;
-	pAgent->ChangeCurrency(-(rand() % (40 - 10 + 1) + 10));
-	pAgent->ChangeThirst(rand() % (50 - 25 + 1) + 25);
-	pAgent->ChangeHunger(rand() % (50 - 25 + 1) + 25);
+	int hunger = pAgent->GetHunger();
+	int currency = pAgent->GetCurrency();
+	if (currency > hunger) {
+		pAgent->AddCurrency(-hunger);
+		pAgent->AddHunger(-hunger);
+	}
+	else {
+		pAgent->AddCurrency(-currency);
+		pAgent->AddHunger(-currency);
+	}
 	// Drink if thirsty
-	if (pAgent->GetThirst() > 20)
+	if (pAgent->IsThirsty())
 		pAgent->GetFSM()->ChangeState(&QuenchThirst::Instance());
+	// Revert to previous state
+	pAgent->GetFSM()->RevertState();
 }
 
 void SatisfyHunger::Exit(Agent* pAgent) {

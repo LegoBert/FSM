@@ -42,19 +42,24 @@ public:
 	void ChangeLocation(Location newLocation) { currentLocation = newLocation; }
 
 	int GetCurrency() { return currency; }
-	void ChangeCurrency(int val) { currency += val; }
+	void AddCurrency(int val) { currency += val; }
+	void SetCurrency(int val) { currency = val; }
 
 	int GetEnergy() { return energy; }
-	void ChangeEnergy(int val) { energy += val; }
+	void AddEnergy(int val) { energy += val; }
+	void SetEnergy(int val) { energy = val; }
 
 	int GetThirst() { return thirst; }
-	void ChangeThirst(int val) { thirst += val; }
+	void AddThirst(int val) { thirst += val; }
+	void SetThirst(int val) { thirst = val; }
 
 	int GetHunger() { return hunger; }
-	void ChangeHunger(int val) { hunger += val; }
+	void AddHunger(int val) { hunger += val; }
+	void setHunger(int val) { hunger = val; }
 
 	int GetHappines() { return happines; }
-	void ChangeHappines(int val) { happines += val; }
+	void addHappines(int val) { happines += val; }
+	void setHappines(int val) { happines = val; }
 
 	// Health Functions
 	int GetHP() { return hp; }
@@ -70,6 +75,18 @@ public:
 			alive = false;
 	}
 	bool GetAlive() { return alive; }
+	bool IsHungry() {
+		if (hunger >= 50) return true;
+		return false;
+	}
+	bool IsThirsty() {
+		if (thirst >= 50) return true;
+		return false;
+	}
+	bool IsFatigue() {
+		if (energy <= 0) return true;
+		return false;
+	}
 };
 
 #endif

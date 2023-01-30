@@ -3,7 +3,7 @@
 Agent::Agent(string n, int id) : BaseGameEntity(n,id) {
 	currentLocation = Location::Home;
 	currency = rand() % (100 - 50 + 1) + 50;
-	energy = rand() % (25 + 1);
+	energy = rand() % (100);
 	thirst = rand() % (50 + 1);
 	hunger = rand() % (50 + 1);
 	happines = rand() % (100 - 50 + 1) + 50;
@@ -19,19 +19,28 @@ Agent::~Agent() {
 
 void Agent::Update() {
 	// Randomly affect stats
-	energy -= rand() % (10);
-	thirst += rand() % (10);
-	hunger += rand() % (10);
-	happines -= rand() % (10);
+	if (alive) {
+		energy -= rand() % (6);
+		thirst += rand() % (6);
+		hunger += rand() % (6);
+		happines -= rand() % (6);
 
-	agentStateMachine->Update();
+		// Lose or regenerate HP
+		if (thirst > 100 || hunger > 100 || happines < 0) {
+			LossHP();
+		}
+		else {
+			RegenHP();
+		}
 
-	// Lose or regenerate HP
-	if (thirst > 100 || hunger > 100 || happines < 0) {
-		LossHP();
+		agentStateMachine->Update();
 	}
 	else {
-		RegenHP();
+		cout << "Man, I am dead!" << endl;
+		cout << "Money: " << GetCurrency() << endl;
+		cout << "Thirst: " << GetThirst() << endl;
+		cout << "Hunger: " << GetHunger() << endl;
+		cout << "Happines: " << GetHappines() << endl;
 	}
 };
 
