@@ -3,8 +3,6 @@
 #include <vector>
 #include <iostream>
 #include <cassert>
-#include "State.h"
-#include "Agent.h"
 #include "Telegram.h"
 using namespace std;
 

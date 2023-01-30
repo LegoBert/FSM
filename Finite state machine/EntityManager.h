@@ -9,11 +9,13 @@ using namespace std;
 
 class EntityManager {
 private:
-	static EntityManager instance;
 	EntityManager() = default;
 	vector<BaseGameEntity*> m_EntityMap;
 public:
-	static EntityManager* Instance() { return &instance; }
+	static EntityManager& Instance() { 
+		static EntityManager instance;
+		return instance;
+	}
 	void RegisterEntity(BaseGameEntity* newEntity);
 	BaseGameEntity* GetEntityFromID(int id);
 	void RemoveEntity(BaseGameEntity* pEntity);

@@ -8,9 +8,11 @@ using namespace std;
 class GoToSleep : public State {
 private:
 	GoToSleep() = default;
-	static GoToSleep instance;
 public:
-	static GoToSleep* Instance() { return &instance; }
+	static GoToSleep& Instance() { 
+		static GoToSleep instance;
+		return instance;
+	}
 	virtual void Enter(Agent* pAgent);
 	virtual void Execute(Agent* pAgent);
 	virtual void Exit(Agent* pAgent);
@@ -19,9 +21,11 @@ public:
 class GoToWork : public State {
 private:
 	GoToWork() = default;
-	static GoToWork instance;
 public:
-	static GoToWork* Instance() { return &instance; }
+	static GoToWork& Instance() {
+		static GoToWork instance;
+		return instance;
+	}
 	virtual void Enter(Agent* pAgent);
 	virtual void Execute(Agent* pAgent);
 	virtual void Exit(Agent* pAgent);
@@ -30,9 +34,11 @@ public:
 class QuenchThirst : public State {
 private:
 	QuenchThirst() = default;
-	static QuenchThirst instance;
 public:
-	static QuenchThirst* Instance() { return &instance; }
+	static QuenchThirst& Instance() {
+		static QuenchThirst instance;
+		return instance;
+	}
 	virtual void Enter(Agent* pAgent);
 	virtual void Execute(Agent* pAgent);
 	virtual void Exit(Agent* pAgent);
@@ -41,9 +47,11 @@ public:
 class SatisfyHunger : public State {
 private:
 	SatisfyHunger() = default;
-	static SatisfyHunger instance;
 public:
-	static SatisfyHunger* Instance() { return &instance; }
+	static SatisfyHunger& Instance() {
+		static SatisfyHunger instance;
+		return instance;
+	}
 	virtual void Enter(Agent* pAgent);
 	virtual void Execute(Agent* pAgent);
 	virtual void Exit(Agent* pAgent);

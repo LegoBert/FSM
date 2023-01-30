@@ -1,4 +1,5 @@
 #include "StateMachine.h"
+#include "State.h"
 
 StateMachine::StateMachine(Agent* o) {
 	owner = o;

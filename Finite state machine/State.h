@@ -2,12 +2,9 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include "Agent.h"
-#include "StateMachine.h"
 #include "Telegram.h"
 using namespace std;
 
-class StateMachine;
 class Agent;
 
 class State {
@@ -16,5 +13,5 @@ public:
 	virtual void Execute(Agent*) = 0;
 	virtual void Exit(Agent*) = 0;
 	virtual ~State() = default;
-	virtual bool OnMessage(Agent*, const Telegram&) = 0;
+	virtual bool OnMessage(Agent*, const Telegram&) { return false; };
 };

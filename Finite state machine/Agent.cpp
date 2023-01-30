@@ -9,7 +9,7 @@ Agent::Agent(string n, int id) : BaseGameEntity(n,id) {
 	happines = rand() % (100 - 50 + 1) + 50;
 
 	agentStateMachine = new StateMachine(this);
-	agentStateMachine->SetCurrent(GoToSleep::Instance());
+	agentStateMachine->SetCurrent(&GoToSleep::Instance());
 	//agentStateMachine->SetGlobal();
 };
 

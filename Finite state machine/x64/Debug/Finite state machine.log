@@ -1,9 +1,4 @@
-﻿  Agent.h
-  AgentStates.cpp
+﻿  BaseGameEntity.h
+  StateMachine.cpp
   Generating Code...
-x64\Debug\Agent.obj : warning LNK4042: object specified more than once; extras ignored
-AgentStates.obj : error LNK2001: unresolved external symbol "private: static class QuenchThirst QuenchThirst::instance" (?instance@QuenchThirst@@0V1@A)
-AgentStates.obj : error LNK2001: unresolved external symbol "private: static class SatisfyHunger SatisfyHunger::instance" (?instance@SatisfyHunger@@0V1@A)
-Main.obj : error LNK2019: unresolved external symbol "public: __cdecl Agent::Agent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (??0Agent@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z) referenced in function main
-Main.obj : error LNK2001: unresolved external symbol "private: static class EntityManager EntityManager::instance" (?instance@EntityManager@@0V1@A)
-D:\GitHub\FSM\x64\Debug\Finite state machine.exe : fatal error LNK1120: 4 unresolved externals
+  Finite state machine.vcxproj -> C:\Users\Kit Sundström\Documents\GitHub\FSM\x64\Debug\Finite state machine.exe

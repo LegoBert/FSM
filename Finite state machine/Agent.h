@@ -6,7 +6,7 @@
 #include <iostream>
 #include "BaseGameEntity.h"
 #include "StateMachine.h"
-#include "AgentStates.h" // problem?
+#include "AgentStates.h"
 using namespace std;
 
 class StateMachine;

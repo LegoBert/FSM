@@ -1,4 +1,5 @@
 #include "AgentStates.h"
+#include "Agent.h"
 
 // GoToSleep
 void GoToSleep::Enter(Agent* pAgent) {
@@ -17,10 +18,10 @@ void GoToSleep::Execute(Agent* pAgent) {
 	pAgent->ChangeEnergy(rand() % (100 - 70 + 1) + 70);
 	// Eat if hungry after waking up
 	if (pAgent->GetHunger() > 20)
-		pAgent->GetFSM()->ChangeState(SatisfyHunger::Instance());
+		pAgent->GetFSM()->ChangeState(&SatisfyHunger::Instance());
 	// Drink if thirsty after waking up
 	if (pAgent->GetThirst() > 20)
-		pAgent->GetFSM()->ChangeState(QuenchThirst::Instance());
+		pAgent->GetFSM()->ChangeState(&QuenchThirst::Instance());
 }
 	
 void GoToSleep::Exit(Agent* pAgent) {
@@ -95,7 +96,7 @@ void SatisfyHunger::Execute(Agent* pAgent) {
 	pAgent->ChangeHunger(rand() % (50 - 25 + 1) + 25);
 	// Drink if thirsty
 	if (pAgent->GetThirst() > 20)
-		pAgent->GetFSM()->ChangeState(QuenchThirst::Instance());
+		pAgent->GetFSM()->ChangeState(&QuenchThirst::Instance());
 }
 
 void SatisfyHunger::Exit(Agent* pAgent) {
