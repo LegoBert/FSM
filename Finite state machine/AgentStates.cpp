@@ -16,6 +16,7 @@ void GoToSleep::Execute(Agent* pAgent) {
 		<< ": ZZZ..."
 		<< endl;
 	pAgent->SetEnergy(100);
+	/*
 	// Eat
 	if (pAgent->IsHungry())
 		pAgent->GetFSM()->ChangeState(&SatisfyHunger::Instance());
@@ -24,6 +25,7 @@ void GoToSleep::Execute(Agent* pAgent) {
 		pAgent->GetFSM()->ChangeState(&QuenchThirst::Instance());
 	// Work 
 		pAgent->GetFSM()->ChangeState(&GoToWork::Instance());
+	*/
 }
 	
 void GoToSleep::Exit(Agent* pAgent) {

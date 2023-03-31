@@ -8,10 +8,9 @@
 using namespace std;
 
 class EntityManager {
-private:
+public:
 	EntityManager() = default;
 	vector<BaseGameEntity*> m_EntityMap;
-public:
 	static EntityManager& Instance() { 
 		static EntityManager instance;
 		return instance;

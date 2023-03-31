@@ -1,4 +1,2 @@
-﻿  Agent.cpp
-  AgentStates.cpp
-  Generating Code...
-  Finite state machine.vcxproj -> C:\Users\Kit Sundström\Documents\GitHub\FSM\x64\Debug\Finite state machine.exe
+﻿  Main.cpp
+  Finite state machine.vcxproj -> D:\GitHub\FSM\x64\Debug\Finite state machine.exe

@@ -139,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="AgentStates.h" />
     <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="GameClock.h" />
     <ClInclude Include="MessageDispatcher.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
