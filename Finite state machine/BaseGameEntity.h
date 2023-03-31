@@ -20,7 +20,7 @@ public:
 		name = n;
 	}
 	~BaseGameEntity() = default;
-	virtual void Update() = 0;
+	virtual void Update(int hour, int min) = 0;
 	int ID() { return m_ID; }
 	virtual bool HandleMessage(const Telegram& msg) = 0;
 	string GetNameOfEntity() { return name; }

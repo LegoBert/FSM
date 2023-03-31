@@ -17,7 +17,7 @@ Agent::~Agent() {
 	delete agentStateMachine;
 }
 
-void Agent::Update() {
+void Agent::Update(int hour, int min) {
 	// Randomly affect stats
 	if (alive) {
 		energy -= rand() % (6);
@@ -32,7 +32,6 @@ void Agent::Update() {
 		else {
 			RegenHP();
 		}
-
 		agentStateMachine->Update();
 	}
 	else {

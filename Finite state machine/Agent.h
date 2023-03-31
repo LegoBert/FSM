@@ -33,7 +33,7 @@ private:
 public:
 	Agent(string n , int id);
 	~Agent();
-	void Update();
+	void Update(int hour, int min) override;
 	bool HandleMessage(const Telegram& msg);
 	StateMachine* GetFSM()const { return agentStateMachine; }
 
