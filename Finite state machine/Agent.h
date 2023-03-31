@@ -34,6 +34,7 @@ public:
 	Agent(string n , int id);
 	~Agent();
 	void Update(int hour, int min) override;
+	void MakeDecision(int hour, int min);
 	bool HandleMessage(const Telegram& msg);
 	StateMachine* GetFSM()const { return agentStateMachine; }
 

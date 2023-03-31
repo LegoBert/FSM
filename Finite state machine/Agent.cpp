@@ -32,6 +32,7 @@ void Agent::Update(int hour, int min) {
 		else {
 			RegenHP();
 		}
+		MakeDecision(hour,min);
 		agentStateMachine->Update();
 	}
 	else {
@@ -43,7 +44,10 @@ void Agent::Update(int hour, int min) {
 	}
 };
 
-bool Agent::HandleMessage(const Telegram& msg)
-{
+bool Agent::HandleMessage(const Telegram& msg) {
 	return agentStateMachine->HandleMessage(msg);
+}
+
+void Agent::MakeDecision(int hour, int min) {
+
 }
