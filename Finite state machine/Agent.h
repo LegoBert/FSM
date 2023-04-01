@@ -25,7 +25,6 @@ private:
 
 	// Stats
 	int currency;
-	int energy;
 	int thirst;
 	int hunger;
 	int happines;
@@ -45,10 +44,6 @@ public:
 	int GetCurrency() { return currency; }
 	void AddCurrency(int val) { currency += val; }
 	void SetCurrency(int val) { currency = val; }
-
-	int GetEnergy() { return energy; }
-	void AddEnergy(int val) { energy += val; }
-	void SetEnergy(int val) { energy = val; }
 
 	int GetThirst() { return thirst; }
 	void AddThirst(int val) { thirst += val; }
@@ -82,10 +77,6 @@ public:
 	}
 	bool IsThirsty() {
 		if (thirst >= 50) return true;
-		return false;
-	}
-	bool IsFatigue() {
-		if (energy <= 0) return true;
 		return false;
 	}
 };

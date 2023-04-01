@@ -15,24 +15,9 @@ void GoToSleep::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": ZZZ..."
 		<< endl;
-	pAgent->SetEnergy(100);
-	/*
-	// Eat
-	if (pAgent->IsHungry())
-		pAgent->GetFSM()->ChangeState(&SatisfyHunger::Instance());
-	// Drink
-	if (pAgent->IsThirsty())
-		pAgent->GetFSM()->ChangeState(&QuenchThirst::Instance());
-	// Work 
-		pAgent->GetFSM()->ChangeState(&GoToWork::Instance());
-	*/
 }
 	
-void GoToSleep::Exit(Agent* pAgent) {
-	cout << pAgent->GetNameOfEntity()
-		<< ": Hello, world!"
-		<< endl;
-}
+void GoToSleep::Exit(Agent* pAgent) {}
 
 // GoToWork
 void GoToWork::Enter(Agent* pAgent) {
@@ -48,52 +33,27 @@ void GoToWork::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": Working"
 		<< endl;
-	pAgent->AddEnergy(-5);
 	pAgent->AddCurrency(rand() % (50 - 10 + 1) + 10);
-	// Eat
-	if (pAgent->IsHungry())
-		pAgent->GetFSM()->ChangeState(&SatisfyHunger::Instance());
-	// Drink
-	if (pAgent->IsThirsty())
-		pAgent->GetFSM()->ChangeState(&QuenchThirst::Instance());
-	// Sleep
-	if (pAgent->IsFatigue())
-		pAgent->GetFSM()->ChangeState(&GoToSleep::Instance());
 }
 
-void GoToWork::Exit(Agent* pAgent) {
-	cout << pAgent->GetNameOfEntity()
-		<< ": Done Working"
-		<< endl;
-}
+void GoToWork::Exit(Agent* pAgent) {}
 
 // QuenchThirst
-void QuenchThirst::Enter(Agent* pAgent) {
-	cout << pAgent->GetNameOfEntity()
-		<< ": Man, I am thirsty"
-		<< endl;
-}
+void QuenchThirst::Enter(Agent* pAgent) {}
 
 void QuenchThirst::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": Drinking"
 		<< endl;
-	pAgent->AddThirst(-80);
+	pAgent->SetThirst(0);
 	// Revert to previous state
 	pAgent->GetFSM()->RevertState();
 }
 
-void QuenchThirst::Exit(Agent* pAgent) {
-	cout << pAgent->GetNameOfEntity()
-		<< ": That's better"
-		<< endl;
-}
+void QuenchThirst::Exit(Agent* pAgent) {}
 
 // SatisfyHunger
 void SatisfyHunger::Enter(Agent* pAgent) {
-	cout << pAgent->GetNameOfEntity()
-		<< ": Man, I am hungry"
-		<< endl;
 	if (pAgent->GetLocation() != Location::Resturant) {
 		cout << pAgent->GetNameOfEntity()
 			<< ": Walking to resturant"
@@ -116,15 +76,6 @@ void SatisfyHunger::Execute(Agent* pAgent) {
 		pAgent->AddCurrency(-currency);
 		pAgent->AddHunger(-currency);
 	}
-	// Drink if thirsty
-	if (pAgent->IsThirsty())
-		pAgent->GetFSM()->ChangeState(&QuenchThirst::Instance());
-	// Revert to previous state
-	pAgent->GetFSM()->RevertState();
 }
 
-void SatisfyHunger::Exit(Agent* pAgent) {
-	cout << pAgent->GetNameOfEntity()
-		<< ": That's better"
-		<< endl;
-}
+void SatisfyHunger::Exit(Agent* pAgent) {}
