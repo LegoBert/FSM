@@ -16,7 +16,12 @@ private:
 	static MessageDispatcher instance;
 	MessageDispatcher() = default;
 public:
-	static MessageDispatcher* Instance() { return &instance; }
+	static MessageDispatcher& Instance() { 
+		static MessageDispatcher instance;
+		return instance; 
+	}
 	void DispatchMessage(float delay, int sender, int receiver, int msg);
 	void DispatchDelayedMessages();
+	void SetEntityManager(EntityManager* entityMgr) { this->entityMgr = entityMgr; }
+	EntityManager* GetEntityManager() { return entityMgr; }
 };

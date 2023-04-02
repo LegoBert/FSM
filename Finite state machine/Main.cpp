@@ -4,9 +4,12 @@
 #include "GameClock.h"
 
 EntityManager& EntityMgr = EntityManager::Instance();
+MessageDispatcher& MsgDispatcher = MessageDispatcher::Instance();
+	
 
 
 int main() {
+	MsgDispatcher.SetEntityManager(&EntityMgr);
 	GameClock time = GameClock(1, 8, 0);
 	//Adding the entities
 	EntityMgr.RegisterEntity(new Agent("Kevin Bacon", nextValidID));

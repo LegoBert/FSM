@@ -20,14 +20,13 @@ void Agent::Update(int hour, int min) {
 	// Randomly affect stats
 	if (alive) {
 		if (this->GetLocation() != Location::Home) {
-			thirst += rand() % (9) + 1;
-			hunger += rand() % (9) + 1;
-			happines -= rand() % (9) + 1;
+			thirst += rand() % (10) + 1;
+			hunger += rand() % (10) + 1;
+			happines -= rand() % (1) + 1;
 		}
 		else {
 			thirst += rand() % (1) + 1;
 			hunger += rand() % (1) + 1;
-			happines -= rand() % (1) + 1;
 		}
 
 		// Lose or regenerate HP
