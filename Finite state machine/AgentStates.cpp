@@ -38,6 +38,24 @@ void GoToWork::Execute(Agent* pAgent) {
 
 void GoToWork::Exit(Agent* pAgent) {}
 
+bool GoToWork::OnMessage(Agent* pAgent, const Telegram& msg) {
+	switch (msg.msg)
+	{
+	case MessageType::JoinMe:
+	{
+
+		if (pAgent->GetHappines() < 70 && pAgent->GetLocation() != Location::Bar) {
+			cout << pAgent->GetNameOfEntity()
+				<< ": Sure, I will come"
+				<< endl;
+			pAgent->GetFSM()->ChangeState(&BarHangOut::Instance());
+		}
+		break;
+	}
+	}
+	return true;
+}
+
 // QuenchThirst
 void QuenchThirst::Enter(Agent* pAgent) {}
 
@@ -51,6 +69,24 @@ void QuenchThirst::Execute(Agent* pAgent) {
 }
 
 void QuenchThirst::Exit(Agent* pAgent) {}
+
+bool QuenchThirst::OnMessage(Agent* pAgent, const Telegram& msg) {
+	switch (msg.msg)
+	{
+	case MessageType::JoinMe:
+	{
+
+		if (pAgent->GetHappines() < 70 && pAgent->GetLocation() != Location::Bar) {
+			cout << pAgent->GetNameOfEntity()
+				<< ": Sure, I will come"
+				<< endl;
+			pAgent->GetFSM()->ChangeState(&BarHangOut::Instance());
+		}
+		break;
+	}
+	}
+	return true;
+}
 
 // SatisfyHunger
 void SatisfyHunger::Enter(Agent* pAgent) {
@@ -89,6 +125,18 @@ bool SatisfyHunger::OnMessage(Agent* pAgent, const Telegram& msg) {
 			cout << pAgent->GetNameOfEntity()
 				<< ": Man, I'm hungry"
 				<< endl;
+			break;
+		}
+		case MessageType::JoinMe:
+		{
+
+			if (pAgent->GetHappines() < 70 && pAgent->GetLocation() != Location::Bar) {
+				cout << pAgent->GetNameOfEntity()
+					<< ": Sure, I will come"
+					<< endl;
+				pAgent->GetFSM()->ChangeState(&BarHangOut::Instance());
+			}
+			break;
 		}
 	}
 	return true;
@@ -101,6 +149,15 @@ void BarHangOut::Enter(Agent* pAgent) {
 			<< ": Walking to the bar"
 			<< endl;
 		pAgent->ChangeLocation(Location::Bar);
+	}
+	for (int i = 0; i <= EntityManager::Instance().m_EntityMap.size()-1; i++) {
+		if (i == 0) {
+			cout << pAgent->GetNameOfEntity()
+				<< ": I am at the bar, join me!"
+				<< endl;
+		}
+		if (i != pAgent->ID())
+			MessageDispatcher::Instance().DispatchMessage(pAgent->ID(), i, MessageType::JoinMe);
 	}
 	MessageDispatcher::Instance().DispatchMessage(pAgent->ID(), pAgent->ID(), MessageType::OrderBeer);
 }

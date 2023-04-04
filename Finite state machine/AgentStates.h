@@ -17,6 +17,7 @@ public:
 	virtual void Enter(Agent* pAgent);
 	virtual void Execute(Agent* pAgent);
 	virtual void Exit(Agent* pAgent);
+	virtual bool OnMessage(Agent*, const Telegram&) { return true; }
 };
 
 class GoToWork : public State {
@@ -30,6 +31,7 @@ public:
 	virtual void Enter(Agent* pAgent);
 	virtual void Execute(Agent* pAgent);
 	virtual void Exit(Agent* pAgent);
+	virtual bool OnMessage(Agent*, const Telegram&);
 };
 
 class QuenchThirst : public State {
@@ -43,6 +45,7 @@ public:
 	virtual void Enter(Agent* pAgent);
 	virtual void Execute(Agent* pAgent);
 	virtual void Exit(Agent* pAgent);
+	virtual bool OnMessage(Agent*, const Telegram&);
 };
 
 class SatisfyHunger : public State {

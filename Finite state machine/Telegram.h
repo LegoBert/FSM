@@ -15,6 +15,7 @@ struct Telegram {
 
 enum MessageType
 {
+	JoinMe,
 	Hungry,
 	Hello,
 	OrderBeer,
