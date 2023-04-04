@@ -47,7 +47,7 @@ void QuenchThirst::Execute(Agent* pAgent) {
 		<< endl;
 	pAgent->SetThirst(0);
 	// Revert to previous state
-	pAgent->GetFSM()->RevertState();
+	//pAgent->GetFSM()->RevertState();
 }
 
 void QuenchThirst::Exit(Agent* pAgent) {}
@@ -60,6 +60,7 @@ void SatisfyHunger::Enter(Agent* pAgent) {
 			<< endl;
 		pAgent->ChangeLocation(Location::Resturant);
 	}
+	MessageDispatcher::Instance().DispatchMessage(pAgent->ID(), pAgent->ID(), 0);
 }
 
 void SatisfyHunger::Execute(Agent* pAgent) {
@@ -79,3 +80,59 @@ void SatisfyHunger::Execute(Agent* pAgent) {
 }
 
 void SatisfyHunger::Exit(Agent* pAgent) {}
+
+bool SatisfyHunger::OnMessage(Agent* pAgent, const Telegram& msg) {
+	switch (msg.msg)
+	{
+		case MessageType::Hello:
+		{
+			cout << pAgent->GetNameOfEntity()
+				<< ": Man, I'm hungry"
+				<< endl;
+		}
+	}
+	return true;
+}
+
+// BarHangOut
+void BarHangOut::Enter(Agent* pAgent) {
+	if (pAgent->GetLocation() != Location::Bar) {
+		cout << pAgent->GetNameOfEntity()
+			<< ": Walking to the bar"
+			<< endl;
+		pAgent->ChangeLocation(Location::Bar);
+	}
+}
+
+void BarHangOut::Execute(Agent* pAgent) {
+	cout << pAgent->GetNameOfEntity()
+		<< ": Drinking beer"
+		<< endl;
+	int hunger = pAgent->GetHunger();
+	int currency = pAgent->GetCurrency();
+	if (currency > hunger) {
+		pAgent->AddCurrency(-hunger);
+		pAgent->AddHunger(-hunger);
+	}
+	else {
+		pAgent->AddCurrency(-currency);
+		pAgent->AddHunger(-currency);
+	}
+}
+
+void BarHangOut::Exit(Agent* pAgent) {}
+
+bool BarHangOut::OnMessage(Agent* pAgent, const Telegram& msg) {
+	switch (msg.msg)
+	{
+		case MessageType::Hello:
+		{
+			cout << pAgent->GetNameOfEntity()
+				<< ": Hello"
+				<< endl;
+		}
+		default:
+			break;
+	}
+	return true;
+}

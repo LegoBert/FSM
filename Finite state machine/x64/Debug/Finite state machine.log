@@ -1,4 +1,2 @@
-﻿  Main.cpp
-  MessageDispatcher.cpp
-  Generating Code...
+﻿  AgentStates.cpp
   Finite state machine.vcxproj -> D:\GitHub\FSM\x64\Debug\Finite state machine.exe

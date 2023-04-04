@@ -14,7 +14,7 @@ private:
 	Agent* owner;
 	State* currentState;
 	State* previousState;
-	//State* globalState;
+	State* globalState;
 public:
 	StateMachine(Agent* owner);
 	void Update();
@@ -25,9 +25,9 @@ public:
 	// Getters and setters
 	State* CurrentState() const { return currentState; }
 	State* PreviousState() const { return previousState; }
-	//State* GlobalState() const { return globalState; }
+	State* GlobalState() const { return globalState; }
 	void SetCurrent(State* s) { currentState = s; }
 	void SetPrevious(State* s) { previousState = s; }
-	//void SetGlobal(State* s) { globalState = s; }
+	void SetGlobal(State* s) { globalState = s; }
 
 };

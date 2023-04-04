@@ -11,7 +11,6 @@ private:
 	string name;
 	void setID(int id) {
 		m_ID = id;
-		nextValidID++;
 	}
 public:
 	BaseGameEntity() = default;

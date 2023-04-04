@@ -9,7 +9,6 @@ Agent::Agent(string n, int id) : BaseGameEntity(n,id) {
 
 	agentStateMachine = new StateMachine(this);
 	agentStateMachine->SetCurrent(&GoToWork::Instance());
-	//agentStateMachine->SetGlobal();
 };
 
 Agent::~Agent() {

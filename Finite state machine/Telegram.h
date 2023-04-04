@@ -1,7 +1,5 @@
 #pragma once
 
-static int nextValidID = 0;
-
 struct Telegram {
 	int sender;
 	int receiver;
@@ -13,6 +11,13 @@ struct Telegram {
 		receiver = r;
 		msg = m;
 	}
+};
+
+enum MessageType
+{
+	Hello,
+	Question,
+	GoodBye,
 };
 
 enum Location {

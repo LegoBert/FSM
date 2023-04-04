@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include "State.h"
+#include "MessageDispatcher.h"
 using namespace std;
 
 class GoToSleep : public State {
@@ -55,4 +56,19 @@ public:
 	virtual void Enter(Agent* pAgent);
 	virtual void Execute(Agent* pAgent);
 	virtual void Exit(Agent* pAgent);
+	virtual bool OnMessage(Agent*, const Telegram&);
+};
+
+class BarHangOut : public State {
+private:
+	BarHangOut() = default;
+public:
+	static BarHangOut& Instance() {
+		static BarHangOut instance;
+		return instance;
+	}
+	virtual void Enter(Agent* pAgent);
+	virtual void Execute(Agent* pAgent);
+	virtual void Exit(Agent* pAgent);
+	virtual bool OnMessage(Agent*, const Telegram&);
 };

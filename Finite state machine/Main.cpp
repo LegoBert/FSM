@@ -12,10 +12,10 @@ int main() {
 	MsgDispatcher.SetEntityManager(&EntityMgr);
 	GameClock time = GameClock(1, 8, 0);
 	//Adding the entities
-	EntityMgr.RegisterEntity(new Agent("Kevin Bacon", nextValidID));
-	EntityMgr.RegisterEntity(new Agent("Jhon Cena", nextValidID));
-	EntityMgr.RegisterEntity(new Agent("Andrew Lincoln", nextValidID));
-	EntityMgr.RegisterEntity(new Agent("Pedro Pascal", nextValidID));
+	EntityMgr.RegisterEntity(new Agent("Kevin Bacon", 0));
+	EntityMgr.RegisterEntity(new Agent("Jhon Cena", 1));
+	EntityMgr.RegisterEntity(new Agent("Andrew Lincoln", 2));
+	EntityMgr.RegisterEntity(new Agent("Pedro Pascal", 3));
 
 	while (true) {
 		time.Update();

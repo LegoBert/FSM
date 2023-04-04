@@ -20,8 +20,7 @@ public:
 		static MessageDispatcher instance;
 		return instance; 
 	}
-	void DispatchMessage(float delay, int sender, int receiver, int msg);
-	void DispatchDelayedMessages();
+	void DispatchMessage(int sender, int receiver, int msg);
 	void SetEntityManager(EntityManager* entityMgr) { this->entityMgr = entityMgr; }
 	EntityManager* GetEntityManager() { return entityMgr; }
 };
