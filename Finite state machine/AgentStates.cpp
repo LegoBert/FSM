@@ -117,12 +117,41 @@ void BarHangOut::Exit(Agent* pAgent) {}
 bool BarHangOut::OnMessage(Agent* pAgent, const Telegram& msg) {
 	switch (msg.msg)
 	{
-		case MessageType::OrderBeer:
-		{
-			cout << pAgent->GetNameOfEntity()
-				<< ": One beer please!"
-				<< endl;
-		}
+	case MessageType::OrderBeer:
+	{
+		cout << pAgent->GetNameOfEntity()
+			<< ": One beer please!"
+			<< endl;
+		break;
+	}
+	case MessageType::Hello:
+	{
+		cout << pAgent->GetNameOfEntity()
+			<< ": Hey man!"
+			<< endl;
+		break;
+	}
+	case MessageType::Question:
+	{
+		cout << pAgent->GetNameOfEntity()
+			<< ": How are you!"
+			<< endl;
+		break;
+	}
+	case MessageType::Awnser:
+	{
+		cout << pAgent->GetNameOfEntity()
+			<< ": Great now that you are here!"
+			<< endl;
+		break;
+	}
+	case MessageType::GoodBye:
+	{
+		cout << pAgent->GetNameOfEntity()
+			<< ": ¨See ya!"
+			<< endl;
+		break;
+	}
 	}
 	return true;
 }

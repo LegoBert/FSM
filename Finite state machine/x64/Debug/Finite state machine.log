@@ -1,2 +1,4 @@
-﻿  BaseGameEntity.h
+﻿  AgentStates.cpp
+  LINK : D:\GitHub\FSM\x64\Debug\Finite state machine.exe not found or not built by the last incremental link; performing full link
+x64\Debug\Agent.obj : warning LNK4042: object specified more than once; extras ignored
   Finite state machine.vcxproj -> D:\GitHub\FSM\x64\Debug\Finite state machine.exe
