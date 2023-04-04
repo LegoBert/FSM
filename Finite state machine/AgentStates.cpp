@@ -43,7 +43,7 @@ void QuenchThirst::Enter(Agent* pAgent) {}
 
 void QuenchThirst::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
-		<< ": Drinking"
+		<< ": Drinking water"
 		<< endl;
 	pAgent->SetThirst(0);
 	// Revert to previous state
@@ -102,13 +102,14 @@ void BarHangOut::Enter(Agent* pAgent) {
 			<< endl;
 		pAgent->ChangeLocation(Location::Bar);
 	}
+	MessageDispatcher::Instance().DispatchMessage(pAgent->ID(), pAgent->ID(), MessageType::OrderBeer);
 }
 
 void BarHangOut::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": Drinking beer"
 		<< endl;
-	pAgent->AddHappines(20);
+	pAgent->AddHappines(7);
 }
 
 void BarHangOut::Exit(Agent* pAgent) {}
@@ -122,8 +123,6 @@ bool BarHangOut::OnMessage(Agent* pAgent, const Telegram& msg) {
 				<< ": One beer please!"
 				<< endl;
 		}
-		default:
-			break;
 	}
 	return true;
 }

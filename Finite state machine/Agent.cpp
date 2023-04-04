@@ -68,6 +68,14 @@ void Agent::MakeDecision(int hour, int min) {
 			this->GetFSM()->ChangeState(&QuenchThirst::Instance());
 			return;
 		}
+		if (this->happines < 50) {
+			this->GetFSM()->ChangeState(&BarHangOut::Instance());
+			return;
+		}
+		else if (this->currentLocation == Location::Bar && this->happines < 100) {
+			this->GetFSM()->ChangeState(&BarHangOut::Instance());
+			return;
+		}
 		// Go to work if not hungry or thirtsy
 		this->GetFSM()->ChangeState(&GoToWork::Instance());
 	}
