@@ -60,7 +60,7 @@ void SatisfyHunger::Enter(Agent* pAgent) {
 			<< endl;
 		pAgent->ChangeLocation(Location::Resturant);
 	}
-	MessageDispatcher::Instance().DispatchMessage(pAgent->ID(), pAgent->ID(), 0);
+	MessageDispatcher::Instance().DispatchMessage(pAgent->ID(), pAgent->ID(), MessageType::Hungry);
 }
 
 void SatisfyHunger::Execute(Agent* pAgent) {
@@ -84,7 +84,7 @@ void SatisfyHunger::Exit(Agent* pAgent) {}
 bool SatisfyHunger::OnMessage(Agent* pAgent, const Telegram& msg) {
 	switch (msg.msg)
 	{
-		case MessageType::Hello:
+		case MessageType::Hungry:
 		{
 			cout << pAgent->GetNameOfEntity()
 				<< ": Man, I'm hungry"
@@ -108,16 +108,7 @@ void BarHangOut::Execute(Agent* pAgent) {
 	cout << pAgent->GetNameOfEntity()
 		<< ": Drinking beer"
 		<< endl;
-	int hunger = pAgent->GetHunger();
-	int currency = pAgent->GetCurrency();
-	if (currency > hunger) {
-		pAgent->AddCurrency(-hunger);
-		pAgent->AddHunger(-hunger);
-	}
-	else {
-		pAgent->AddCurrency(-currency);
-		pAgent->AddHunger(-currency);
-	}
+	pAgent->AddHappines(20);
 }
 
 void BarHangOut::Exit(Agent* pAgent) {}
@@ -125,10 +116,10 @@ void BarHangOut::Exit(Agent* pAgent) {}
 bool BarHangOut::OnMessage(Agent* pAgent, const Telegram& msg) {
 	switch (msg.msg)
 	{
-		case MessageType::Hello:
+		case MessageType::OrderBeer:
 		{
 			cout << pAgent->GetNameOfEntity()
-				<< ": Hello"
+				<< ": One beer please!"
 				<< endl;
 		}
 		default:

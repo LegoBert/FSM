@@ -54,7 +54,7 @@ public:
 	void setHunger(int val) { hunger = val; }
 
 	int GetHappines() { return happines; }
-	void addHappines(int val) { happines += val; }
+	void AddHappines(int val) { happines += val; }
 	void setHappines(int val) { happines = val; }
 
 	// Health Functions

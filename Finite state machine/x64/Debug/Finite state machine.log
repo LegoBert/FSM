@@ -1,2 +1,7 @@
-﻿  AgentStates.cpp
+﻿  Agent.cpp
+  Agent.h
+  AgentStates.cpp
+  BaseGameEntity.h
+  Main.cpp
+  Generating Code...
   Finite state machine.vcxproj -> D:\GitHub\FSM\x64\Debug\Finite state machine.exe
